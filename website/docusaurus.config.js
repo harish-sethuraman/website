@@ -85,85 +85,134 @@ const DEFAULT_LANGUAGE = "en";
 const GITHUB_URL = "https://github.com/babel/website";
 
 const siteConfig = {
-  useEnglishUrl: true,
-  editUrl: `${GITHUB_URL}/blob/main/docs/`,
-  title: "Babel",
-  tagline: "The compiler for next generation JavaScript",
-  url: "https://babeljs.io",
-  v6Url: "https://v6.babeljs.io/docs/setup/",
-  baseUrl: "/",
-  getDocUrl: (doc, language) =>
-    `${siteConfig.baseUrl}docs/${language || DEFAULT_LANGUAGE}/${doc}`,
-  getPageUrl: (page, language) =>
-    `${siteConfig.baseUrl}${language || DEFAULT_LANGUAGE}/${page}`,
-  getVideoUrl: (videos, language) =>
-    `${siteConfig.baseUrl}${language || DEFAULT_LANGUAGE}/${videos}`,
-  organizationName: "babel",
-  projectName: "babel",
-  repoUrl: "https://github.com/babel/babel",
-  headerLinks: [
-    { doc: "index", label: "Docs" },
-    { page: "setup", label: "Setup" },
-    { page: "repl", label: "Try it out" },
-    { page: "videos", label: "Videos" },
-    { blog: true, label: "Blog" },
-    { search: true },
-    { href: "https://opencollective.com/babel", label: "Donate" },
-    { page: "team", label: "Team" },
-    { href: "https://github.com/babel/babel", label: "GitHub" },
-    // { languages: true }
+  // stylesheets: "",
+  presets: [
+    [
+      "@docusaurus/preset-classic",
+      {
+        docs: {
+          // Docs folder path relative to website dir.
+          path: "../docs",
+
+          editUrl: `https://github.com/babel/website/`,
+
+          // v6Url: "https://v6.babeljs.io/docs/setup/",
+          // Sidebars file relative to website dir.
+          // getDocUrl: (doc, language) =>
+          //   `${siteConfig.baseUrl}docs/${language || DEFAULT_LANGUAGE}/${doc}`,
+          // getPageUrl: (page, language) =>
+          //   `${siteConfig.baseUrl}${language || DEFAULT_LANGUAGE}/${page}`,
+          // getVideoUrl: (videos, language) =>
+          //   `${siteConfig.baseUrl}${language || DEFAULT_LANGUAGE}/${videos}`,
+          sidebarPath: require.resolve("./sidebars.json"),
+        },
+        // ...
+      },
+    ],
   ],
-  users,
-  sponsors,
-  videos,
-  team,
-  tools,
-  toolsMD,
-  setupBabelrc,
-  headerIcon: "img/babel.svg",
-  footerIcon: "img/babel.svg",
-  favicon: "img/favicon.png",
-  ogImage: "img/ogImage.png",
-  colors: {
-    primaryColor: "#323330",
-    secondaryColor: "#323330",
-  },
-  blogSidebarCount: "ALL",
-  highlight: {
-    theme: "tomorrow",
-    hljs: hljs => {
-      hljs.registerLanguage("json5", hljs => hljs.getLanguage("javascript"));
+  title: "Babel",
+
+  themeConfig: {
+    navbar: {
+      logo: {
+        alt: "Babel logo",
+        src: "img/babel.svg",
+        href: "/",
+      },
+      items: [
+        { to: "docs/", label: "Docs" },
+        { to: "setup", label: "setup" },
+        { to: "repl", label: "Try it out" },
+        { to: "videos", label: "Videos" },
+        {
+          type: "search",
+          position: "right",
+        },
+        {
+          href: "https://opencollective.com/babel",
+          label: "Donate",
+          position: "right",
+        },
+
+        { to: "team", label: "Team", position: "right" },
+        {
+          href: "https://github.com/babel/babel",
+          label: "GitHub",
+          position: "right",
+        },
+        { to: "blog", label: "Blog" },
+      ],
+    },
+    algolia: {
+      apiKey: "d42906b043c5422ea07b44fd49c40a0d",
+      indexName: "babeljs",
     },
   },
+  // headerLinks: [
+  //   { doc: "index", label: "Docs" },
+  //   { page: "setup", label: "Setup" },
+  //   { page: "repl", label: "Try it out" },
+  //   { page: "videos", label: "Videos" },
+  //   { blog: true, label: "Blog" },
+  //   { search: true },
+  //   { href: "https://opencollective.com/babel", label: "Donate" },
+  //   { page: "team", label: "Team" },
+  //   { href: "https://github.com/babel/babel", label: "GitHub" },
+  //   // { languages: true }
+  // ],
+
+  tagline: "The compiler for next generation JavaScript",
+  url: "https://babeljs.io",
+  baseUrl: "/",
+  organizationName: "babel",
+  projectName: "babel",
+  // users,
+  // sponsors,
+  // videos,
+  // team,
+  // tools,
+  // toolsMD,
+  // setupBabelrc,
+  // headerIcon: "img/babel.svg",
+  // footerIcon: "img/babel.svg",
+  // favicon: "img/favicon.png",
+  // ogImage: "img/ogImage.png",
+  // colors: {
+  //   primaryColor: "#323330",
+  //   secondaryColor: "#323330",
+  // },
+  // blogSidebarCount: "ALL",
+  // highlight: {
+  //   theme: "tomorrow",
+  //   hljs: hljs => {
+  //     hljs.registerLanguage("json5", hljs => hljs.getLanguage("javascript"));
+  //   },
+  // },
   scripts: [
     {
       src: "https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js",
       defer: true,
     },
+    // {
+    //   src: "https://babeljs.io/js/code-blocks-buttons.js",
+    //   defer: true,
+    // },
     {
-      src: "/js/code-blocks-buttons.js",
-      defer: true,
-    },
-    {
-      src: "/scripts/repl-page-hacks.js",
+      src: "https://babeljs.io/js/repl-page-hacks.js",
       defer: true,
     },
   ],
-  // stylesheets: [ "" ],
   // translationRecruitingLink: "https://crowdin.com/project/",
-  algolia: {
-    apiKey: "d42906b043c5422ea07b44fd49c40a0d",
-    indexName: "babeljs",
-  },
-  disableHeaderTitle: true,
-  onPageNav: "separate",
-  gaTrackingId: "UA-114990275-1",
-  cleanUrl: true,
+
+  // disableHeaderTitle: true,
+  // onPageNav: "separate",
+  // gaTrackingId: "UA-114990275-1",
+  // cleanUrl: true,
   // These two options make the build insanely slow
-  enableUpdateBy: false,
-  enableUpdateTime: false,
+  // enableUpdateBy: false,
+  // enableUpdateTime: false,
   // ----
-  scrollToTop: true,
+  // scrollToTop: true,
   // markdownPlugins: [],
   // cname,
   // docsSideNavCollapsible: true,

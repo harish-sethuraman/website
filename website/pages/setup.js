@@ -1,26 +1,26 @@
 const React = require("react");
-const fs = require("fs");
+// const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 
-const CompLibrary = require("../../core/CompLibrary.js");
-const translate = require("../../server/translate.js").translate;
+const CompLibrary = require("../../../core/CompLibrary.js");
+const translate = require("../../../server/translate.js").translate;
 const Container = CompLibrary.Container;
 const MarkdownBlock = CompLibrary.MarkdownBlock;
 const siteConfig = require(process.cwd() + "/siteConfig.js");
 const setupBabelrc = siteConfig.setupBabelrc;
 const toolsMD = siteConfig.toolsMD;
 
-function checksumTools() {
-  const str = fs.readFileSync(
-    path.join(process.cwd(), "static/scripts/tools.js"),
-    "utf8"
-  );
-  return crypto
-    .createHash("md5")
-    .update(str, "utf8")
-    .digest("hex");
-}
+// function checksumTools() {
+//   // const str = fs.readFileSync(
+//   //   path.join(process.cwd(), "static/scripts/tools.js"),
+//   //   "utf8"
+//   // );
+//   return crypto
+//     .createHash("md5")
+//     .update(str, "utf8")
+//     .digest("hex");
+// }
 
 const SetupHeader = () => {
   return (
@@ -133,9 +133,9 @@ class Setup extends React.Component {
       <div className="mainContainer">
         <SetupHeader />
         <SetupContent />
-        <script
+        {/* <script
           src={`${siteConfig.baseUrl}scripts/tools.js?t=${checksumTools()}`}
-        />
+        /> */}
       </div>
     );
   }

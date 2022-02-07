@@ -1,13 +1,14 @@
 {
   "scripts": {
     "examples": "docusaurus-examples",
-    "start": "docusaurus-start",
-    "build": "docusaurus-build",
-    "publish-gh-pages": "docusaurus-publish",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "publish-gh-pages": "docusaurus deploy",
     "write-translations": "docusaurus-write-translations"
   },
-  "devDependencies": {
-    "docusaurus": "^1.14.6"
-  },
-  "version": "0.0.0"
+  "version": "0.0.0",
+  "dependencies": {
+    "@docusaurus/core": "^2.0.0-beta.15",
+    "@docusaurus/preset-classic": "^2.0.0-beta.15"
+  }
 }
