@@ -1,6 +1,6 @@
 ---
 id: babel-plugin-transform-runtime
-title: @babel/plugin-transform-runtime
+title: "@babel/plugin-transform-runtime"
 ---
 
 A plugin that enables the re-use of Babel's injected helper code to save on codesize.
@@ -94,7 +94,7 @@ e.g. `['@babel/plugin-transform-runtime', { corejs: 3 }],`
   <summary>History</summary>
 | Version | Changes |
 | --- | --- |
-| `v7.4.0` | Supports `{ proposals: boolean }` |
+| `v7.4.0` | Supports|
 </details>
 
 Specifying a number will rewrite the helpers that need polyfillable APIs to reference helpers from that (major) version of `core-js` instead

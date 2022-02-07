@@ -1,6 +1,6 @@
 ---
 id: babel-plugin-proposal-json-strings
-title: @babel/plugin-proposal-json-strings
+title: "@babel/plugin-proposal-json-strings"
 sidebar_label: json-strings
 ---
 
@@ -11,7 +11,7 @@ sidebar_label: json-strings
 **In**
 
 ```js
-const ex = "before after";
+const ex = "beforeafter";
 //                ^ There's a U+2028 char between 'before' and 'after'
 ```
 

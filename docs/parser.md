@@ -1,6 +1,6 @@
 ---
 id: babel-parser
-title: @babel/parser
+title: "@babel/parser"
 ---
 
 <p align="left">
@@ -182,7 +182,7 @@ require("@babel/parser").parse("code", {
 | Name | Code Example |
 |------|--------------|
 | `flow` ([repo](https://github.com/facebook/flow)) | `var a: string = "";` |
-| `flowComments` ([docs](https://flow.org/en/docs/types/comments/)) | `/*:: type Foo = {...}; */` |
+| `flowComments` ([docs](https://flow.org/en/docs/types/comments/)) |  |
 | `jsx` ([repo](https://facebook.github.io/jsx/)) | `<a attr="b">{s}</a>` |
 | `typescript` ([repo](https://github.com/Microsoft/TypeScript)) | `var a: string = "";` |
 | `v8intrinsic` | `%DebugPrint(foo);` |
@@ -209,7 +209,7 @@ require("@babel/parser").parse("code", {
 | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
 | `asyncDoExpressions` ([proposal](https://github.com/tc39/proposal-async-do-expressions))        | `async do { await requestAPI().json() }`                 |
 | `decimal` ([proposal](https://github.com/tc39/proposal-decimal))                                | `0.3m`                                                   |
-| `decorators` ([proposal](https://github.com/tc39/proposal-decorators)) <br> `decorators-legacy` | `@a class A {}`                                          |
+| `decorators` ([proposal](https://github.com/tc39/proposal-decorators)) <br/> `decorators-legacy` | `@a class A {}`                                          |
 | `doExpressions` ([proposal](https://github.com/tc39/proposal-do-expressions))                   | `var a = do { if (true) { 'hi'; } };`                    |
 | `exportDefaultFrom` ([proposal](https://github.com/tc39/ecmascript-export-default-from))        | `export v from "mod"`                                    |
 | `functionBind` ([proposal](https://github.com/zenparsing/es-function-bind))                     | `a::b`, `::console.log`                                  |

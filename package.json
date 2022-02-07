@@ -7,7 +7,7 @@
   "scripts": {
     "bootstrap": "run-s bootstrap:sponsors build",
     "bootstrap:sponsors": "node ./scripts/download-sponsors.js",
-    "build": "run-s build:codemirror6 build:repl build:docusaurus build:redirects && run-s build:social-image",
+    "build": "run-s build:codemirror6 build:repl  build:redirects && run-s build:social-image",
     "build:docusaurus": "cd website && yarn && yarn build",
     "build:redirects": "cpy ./_redirects ./website/build/babel",
     "build:repl": "cross-env NODE_ENV=production webpack",
