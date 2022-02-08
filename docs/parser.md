@@ -186,7 +186,7 @@ require("@babel/parser").parse("code", {
 | Name | Code Example |
 |------|--------------|
 | `flow` ([repo](https://github.com/facebook/flow)) | `var a: string = "";` |
-| `jsx` ([repo](https://facebook.github.io/jsx/)) | `<a attr="b" __dangerouslySetInnerHtml={{code }}>{s}</a>` |
+| `jsx` ([repo](https://facebook.github.io/jsx/)) | `<a attr="b">{s}</a>` |
 | `typescript` ([repo](https://github.com/Microsoft/TypeScript)) | `var a: string = "";` |
 | `v8intrinsic` | `%DebugPrint(foo);` |
 
