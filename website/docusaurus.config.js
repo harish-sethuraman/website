@@ -85,12 +85,12 @@ const DEFAULT_LANGUAGE = "en";
 const GITHUB_URL = "https://github.com/babel/website";
 
 const siteConfig = {
+  tagline: "The compiler for next generation JavaScript",
   titleDelimiter: "·",
   baseUrl: "/",
   favicon: "img/favicon.png",
   onBrokenLinks: "ignore", // enable once everything works fine
   customFields: {
-    baseUrl: "/",
     // getDocUrl: (doc, language) =>
     //   `/docs/${language || DEFAULT_LANGUAGE}/${doc}`,
     // getPageUrl: (page, language) => `/${language || DEFAULT_LANGUAGE}/${page}`,
@@ -168,7 +168,7 @@ const siteConfig = {
       items: [
         { to: "docs/", label: "Docs", position: "right" },
         // { to: "setup", label: "Setup", position: "right" },
-        // { to: "repl", label: "Try it out", position: "right" },
+        { to: "repl", label: "Try it out", position: "right" },
         // { to: "videos", label: "Videos", position: "right" },
         {
           href: "https://opencollective.com/babel",
@@ -192,7 +192,6 @@ const siteConfig = {
   },
   // editUrl: `https://github.com/babel/website`,
   title: "Babel",
-  tagline: "The compiler for next generation JavaScript",
   url: "https://babeljs.io",
   // v6Url: "https://v6.babeljs.io/docs/setup/", not valid but needed
   // getDocUrl: (doc, language) =>
@@ -203,18 +202,6 @@ const siteConfig = {
   //   `${siteConfig.baseUrl}${language || DEFAULT_LANGUAGE}/${videos}`,
   organizationName: "babel",
   projectName: "babel",
-  // headerLinks: [
-  //   { doc: "index", label: "Docs" },
-  //   { page: "setup", label: "Setup" },
-  //   { page: "repl", label: "Try it out" },
-  //   { page: "videos", label: "Videos" },
-  //   { blog: true, label: "Blog" },
-  //   { search: true },
-  //   { href: "https://opencollective.com/babel", label: "Donate" },
-  //   { page: "team", label: "Team" },
-  //   { href: "https://github.com/babel/babel", label: "GitHub" },
-  //   // { languages: true }
-  // ],
   // users,
   // sponsors,
   // videos,
@@ -260,6 +247,62 @@ const siteConfig = {
     },
     {
       src: "/scripts/repl-page-hacks.js",
+      defer: true,
+    },
+    {
+      src: "https://unpkg.com/react@16.3.2/umd/react.production.min.js",
+      defer: true,
+    },
+    {
+      src: "https://unpkg.com/react-dom@16.3.2/umd/react-dom.production.min.js",
+      defer: true,
+    },
+    {
+      src: "https://unpkg.com/codemirror@5.56.0/lib/codemirror.js",
+      defer: true,
+    },
+    {
+      src: "https://unpkg.com/codemirror@5.56.0/mode/javascript/javascript.js",
+      defer: true,
+    },
+    {
+      src: "https://unpkg.com/codemirror@5.56.0/mode/xml/xml.js",
+      defer: true,
+    },
+    {
+      src: "https://unpkg.com/codemirror@5.56.0/mode/jsx/jsx.js",
+      defer: true,
+    },
+    {
+      src: "https://unpkg.com/codemirror@5.56.0/keymap/sublime.js",
+      defer: true,
+    },
+    {
+      src: "https://unpkg.com/codemirror@5.56.0/addon/comment/comment.js",
+      defer: true,
+    },
+    {
+      src: "https://unpkg.com/codemirror@5.56.0/addon/display/placeholder.js",
+      defer: true,
+    },
+    {
+      src: "https://unpkg.com/codemirror@5.56.0/addon/edit/matchbrackets.js",
+      defer: true,
+    },
+    {
+      src: "https://unpkg.com/codemirror@5.56.0/addon/search/searchcursor.js",
+      defer: true,
+    },
+    {
+      src: "https://unpkg.com/codemirror@5.56.0/addon/selection/active-line.js",
+      defer: true,
+    },
+    {
+      src: "https://unpkg.com/lz-string@1.4.4/libs/base64-string.js",
+      defer: true,
+    },
+    {
+      src: "https://unpkg.com/lz-string@1.4.4/libs/lz-string.min.js",
       defer: true,
     },
   ],

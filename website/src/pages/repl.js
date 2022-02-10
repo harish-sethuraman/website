@@ -1,11 +1,14 @@
-"use strict";
-
-const React = require("react");
+import React, { useEffect } from "react";
+import "./repl.css";
+import Head from "@docusaurus/Head";
 const styles = [
   "https://unpkg.com/codemirror@5.56.0/lib/codemirror.css",
   "https://unpkg.com/codemirror@5.56.0/theme/darcula.css",
 ];
+import Layout from "@theme/Layout";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
+// Todo: strek
 const scripts = [
   "https://unpkg.com/react@16.3.2/umd/react.production.min.js",
   "https://unpkg.com/react-dom@16.3.2/umd/react-dom.production.min.js",
@@ -21,27 +24,33 @@ const scripts = [
   "https://unpkg.com/codemirror@5.56.0/addon/selection/active-line.js",
   "https://unpkg.com/lz-string@1.4.4/libs/base64-string.js",
   "https://unpkg.com/lz-string@1.4.4/libs/lz-string.min.js",
-  "/js/build/repl.js",
 ];
 
-class REPL extends React.Component {
-  render() {
-    return (
-      <div>
-        {styles.map(url => (
-          <link rel="stylesheet" type="text/css" href={url} key={url} />
-        ))}
+const REPL = () => {
+  const { siteConfig } = useDocusaurusContext();
 
+  useEffect(() => {
+    import("../../static/js/build/repl.js");
+    console.log('loaded')
+  }, []);
+  return (
+    <Layout title={siteConfig?.title} description={siteConfig?.tagline}>
+      <div>
         <div id="root">
           <noscript>You need to enable JavaScript to run this app.</noscript>
         </div>
-
-        {scripts.map(url => (
-          <script src={url} key={url} />
+        {/* <Head> */}
+        {/* find a way to inject scripts only in this page */}
+        {/* {scripts.map(url => (
+            <script src={url} key={url} />
+          ))} */}
+        {styles.map(url => (
+          <link rel="stylesheet" type="text/css" href={url} key={url} />
         ))}
+        {/* </Head> */}
       </div>
-    );
-  }
-}
+    </Layout>
+  );
+};
 
-module.exports = REPL;
+export default REPL;
