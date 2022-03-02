@@ -174,11 +174,11 @@ const siteConfig = {
         { to: "docs/", label: "Docs", position: "right" },
         // { to: "setup", label: "Setup", position: "right" },
         {
-          target: "_self",
+          target: "_top",
           href:
             process.env.ENV === "development"
               ? "http://localhost:3000/repl"
-              : "http://localhost:3000/repl",
+              : `/repl`,
           label: "Try it out",
           position: "right",
         },
