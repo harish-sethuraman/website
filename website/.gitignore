@@ -4,6 +4,7 @@ lib/core/metadata.js
 lib/core/MetadataBlog.js
 website/translated_docs
 website/build/
+static/repl/
 website/yarn.lock
 website/node_modules
 
