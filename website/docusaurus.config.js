@@ -173,7 +173,15 @@ const siteConfig = {
       items: [
         { to: "docs/", label: "Docs", position: "right" },
         // { to: "setup", label: "Setup", position: "right" },
-        // { to: "repl", label: "Try it out", position: "right" },
+        {
+          target: "_self",
+          href:
+            process.env.ENV === "development"
+              ? "http://localhost:3000/repl"
+              : "http://localhost:3000/repl",
+          label: "Try it out",
+          position: "right",
+        },
         { to: "videos/", label: "Videos", position: "right" },
 
         { to: "blog", label: "Blog", position: "right" },
