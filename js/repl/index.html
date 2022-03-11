@@ -1,7 +1,186 @@
 <!DOCTYPE html>
 <html lang="">
   <head>
-    <link href="/styles.css" rel="stylesheet" />
+    <style>
+      html {
+        background-color: var(--ifm-background-color);
+        color: var(--ifm-font-color-base);
+        color-scheme: var(--ifm-color-scheme);
+        font: 100% / 1.65 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+          Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI",
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        -webkit-font-smoothing: antialiased;
+        -webkit-tap-highlight-color: transparent;
+        text-rendering: optimizelegibility;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+      }
+      body {
+        margin: 0;
+      }
+      a {
+        text-decoration: none;
+      }
+      .navbar {
+        background: #323330;
+        padding: 0px !important;
+        height: 50px !important;
+        display: flex;
+      }
+      .navbar--fixed-top {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 200;
+      }
+
+      .navbar__inner {
+        padding: 0px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+      }
+      .navbar__items {
+        align-items: center;
+        display: flex;
+        flex: 1;
+        min-width: 0;
+        color: white;
+      }
+      .navbar__items--right {
+        flex: 0 0 auto;
+        justify-content: flex-end;
+      }
+
+      .navbar__item {
+        font-weight: 300;
+        color: white;
+      }
+
+      .clean-btn {
+        background: none;
+        border: none;
+        color: inherit;
+        cursor: pointer;
+        font-family: inherit;
+        padding: 0;
+      }
+      .navbar__link {
+        font-weight: 300;
+      }
+      .navbar__item {
+        display: inline-block;
+        padding: 4px 12px;
+      }
+      .navbar__toggle {
+        display: none;
+        margin-right: 0.5rem;
+      }
+      @media (max-width: 996px) {
+        .navbar__toggle {
+          display: inherit;
+        }
+      }
+      .navbar__logo {
+        flex: 0 0 auto;
+        height: 32px;
+        margin-right: 8px;
+      }
+      html[data-theme="dark"]
+        .themedImage--dark_---node_modules-\@docusaurus-theme-classic-lib-next-theme-ThemedImage-styles-module {
+        display: initial;
+      }
+      .navbar__logo img {
+        height: 100%;
+      }
+      @media (max-width: 996px) {
+        .navbar__item {
+          display: none;
+        }
+      }
+
+      @media only screen and (min-width: 1024px) {
+        .nav-footer {
+          flex-shrink: 0;
+        }
+      }
+
+      .nav-footer {
+        background: #20232a;
+        border: none;
+        color: #202020;
+        font-size: 15px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 400;
+        line-height: 24px;
+        padding-bottom: 2em;
+        padding-top: 2em;
+        position: relative;
+      }
+
+      .nav-footer .sitemap {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto 3em;
+        max-width: 1080px;
+      }
+
+      .nav-footer .sitemap .nav-home {
+        display: table;
+        height: 72px;
+        margin: -12px 20px 0 0;
+        opacity: 0.4;
+        padding: 10px;
+        transition: opacity 0.15s ease-in-out;
+        width: 72px;
+      }
+      .nav-footer .sitemap a {
+        color: hsla(0, 0%, 100%, 0.6);
+        display: block;
+        margin: 2px 0;
+        padding: 3px 0;
+      }
+      .nav-footer .sitemap div {
+        flex: 1;
+      }
+
+      .nav-footer .sitemap h5,
+      .nav-footer .sitemap h5 > a,
+      .nav-footer .sitemap h6,
+      .nav-footer .sitemap h6 > a {
+        color: #fff;
+      }
+      .nav-footer .sitemap h5,
+      .nav-footer .sitemap h6 {
+        margin: 0 0 10px;
+      }
+      img {
+        height: auto;
+      }
+
+      img {
+        max-width: 100%;
+      }
+      h5 {
+        font-weight: 600;
+        line-height: 1.25;
+        font-size: 14px;
+      }
+
+      @media only screen and (max-width: 735px) {
+        .nav-footer .sitemap {
+          display: flex;
+          flex-direction: column;
+          margin: 0 2em 3em;
+          width: calc(100% - 4em);
+        }
+      }
+    </style>
+    <!-- <link href="/styles.css" rel="stylesheet" /> -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Babel · The compiler for next generation JavaScript</title>
@@ -129,18 +308,6 @@
           >
             <span>
               Try it out
-              <svg
-                width="13.5"
-                height="13.5"
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                class="iconExternalLink_---node_modules-@docusaurus-theme-classic-lib-next-theme-IconExternalLink-styles-module"
-              >
-                <path
-                  fill="currentColor"
-                  d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"
-                ></path>
-              </svg>
             </span>
           </a>
           <a class="navbar__item navbar__link" href="/videos/">Videos</a>
@@ -158,18 +325,6 @@
           >
             <span>
               Donate
-              <svg
-                width="13.5"
-                height="13.5"
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                class="iconExternalLink_---node_modules-@docusaurus-theme-classic-lib-next-theme-IconExternalLink-styles-module"
-              >
-                <path
-                  fill="currentColor"
-                  d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"
-                ></path>
-              </svg>
             </span>
           </a>
           <a class="navbar__item navbar__link" href="/team">Team</a>
@@ -181,18 +336,6 @@
           >
             <span>
               GitHub
-              <svg
-                width="13.5"
-                height="13.5"
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                class="iconExternalLink_---node_modules-@docusaurus-theme-classic-lib-next-theme-IconExternalLink-styles-module"
-              >
-                <path
-                  fill="currentColor"
-                  d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"
-                ></path>
-              </svg>
             </span>
           </a>
         </div>
@@ -240,12 +383,11 @@
           /></a>
           <div>
             <h5>Docs</h5>
-            <a href="/docs/en/learn.html">Learn ES2015</a>
+            <a href="/docs/learn">Learn ES2015</a>
           </div>
           <div>
             <h5>Community</h5>
-            <a href="/en/videos.html">Videos</a
-            ><a href="/en/users.html">User Showcase</a
+            <a href="/videos">Videos</a><a href="/users">User Showcase</a
             ><a
               href="http://stackoverflow.com/questions/tagged/babeljs"
               rel="noopener noreferrer"
