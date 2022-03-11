@@ -3,9 +3,6 @@
   <head>
     <style>
       html {
-        background-color: var(--ifm-background-color);
-        color: var(--ifm-font-color-base);
-        color-scheme: var(--ifm-color-scheme);
         font: 100% / 1.65 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
           Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI",
           Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
@@ -17,18 +14,22 @@
         -moz-text-size-adjust: 100%;
         text-size-adjust: 100%;
       }
+
       body {
         margin: 0;
       }
+
       a {
         text-decoration: none;
       }
+
       .navbar {
         background: #323330;
         padding: 0px !important;
         height: 50px !important;
         display: flex;
       }
+
       .navbar--fixed-top {
         position: -webkit-sticky;
         position: sticky;
@@ -43,6 +44,7 @@
         justify-content: space-between;
         width: 100%;
       }
+
       .navbar__items {
         align-items: center;
         display: flex;
@@ -50,6 +52,7 @@
         min-width: 0;
         color: white;
       }
+
       .navbar__items--right {
         flex: 0 0 auto;
         justify-content: flex-end;
@@ -68,34 +71,42 @@
         font-family: inherit;
         padding: 0;
       }
+
       .navbar__link {
         font-weight: 300;
       }
+
       .navbar__item {
         display: inline-block;
         padding: 4px 12px;
       }
+
       .navbar__toggle {
         display: none;
         margin-right: 0.5rem;
       }
+
       @media (max-width: 996px) {
         .navbar__toggle {
           display: inherit;
         }
       }
+
       .navbar__logo {
         flex: 0 0 auto;
         height: 32px;
         margin-right: 8px;
       }
+
       html[data-theme="dark"]
         .themedImage--dark_---node_modules-\@docusaurus-theme-classic-lib-next-theme-ThemedImage-styles-module {
         display: initial;
       }
+
       .navbar__logo img {
         height: 100%;
       }
+
       @media (max-width: 996px) {
         .navbar__item {
           display: none;
@@ -138,12 +149,14 @@
         transition: opacity 0.15s ease-in-out;
         width: 72px;
       }
+
       .nav-footer .sitemap a {
         color: hsla(0, 0%, 100%, 0.6);
         display: block;
         margin: 2px 0;
         padding: 3px 0;
       }
+
       .nav-footer .sitemap div {
         flex: 1;
       }
@@ -154,10 +167,12 @@
       .nav-footer .sitemap h6 > a {
         color: #fff;
       }
+
       .nav-footer .sitemap h5,
       .nav-footer .sitemap h6 {
         margin: 0 0 10px;
       }
+
       img {
         height: auto;
       }
@@ -165,6 +180,7 @@
       img {
         max-width: 100%;
       }
+
       h5 {
         font-weight: 600;
         line-height: 1.25;
@@ -178,6 +194,116 @@
           margin: 0 2em 3em;
           width: calc(100% - 4em);
         }
+      }
+
+      .navbar-sidebar--show .navbar-sidebar {
+        transform: translate3d(0, 0, 0);
+      }
+
+      .navbar-sidebar--show .navbar-sidebar,
+      .navbar-sidebar--show .navbar-sidebar__backdrop {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .navbar-sidebar {
+        overflow: hidden;
+        color: rgb(245, 246, 247);
+        background-color: #242526;
+        bottom: 0;
+        box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
+        left: 0;
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        transform: translate3d(-100%, 0, 0);
+        visibility: hidden;
+        width: 83vw;
+        transition-property: opacity, visibility, transform;
+        transition-duration: 250ms;
+        transition-timing-function: ease-in-out;
+      }
+
+      .navbar-sidebar__brand {
+        align-items: center;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex: 1;
+        height: 60px;
+        padding: 8px 16px;
+      }
+
+      .navbar-sidebar__close {
+        color: rgb(245, 246, 247);
+        display: flex;
+        margin-left: auto;
+      }
+
+      .navbar-sidebar__items {
+        display: flex;
+        height: 909px;
+        transform: translateZ(0);
+        transition: transform 200ms ease-in-out;
+      }
+
+      .navbar-sidebar__item {
+        flex-shrink: 0;
+        padding: 8px;
+        width: 80vw;
+      }
+
+      .menu {
+        font-weight: 500;
+        overflow-x: hidden;
+      }
+
+      .menu__link {
+        color: #dadde1;
+        flex: 1;
+        justify-content: space-between;
+        line-height: 1.25;
+        padding: 8px 16px;
+      }
+
+      .menu__link,
+      .menu__caret {
+        border-radius: 0.25rem;
+        display: flex;
+        transition: background 200ms cubic-bezier(0.08, 0.52, 0.52, 1);
+      }
+
+      .menu__list {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+      }
+
+      .menu__link:hover {
+        text-decoration: none;
+        transition: color 200ms cubic-bezier(0.08, 0.52, 0.52, 1);
+      }
+      .menu__link:hover,
+      .menu__caret:hover {
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .navbar-sidebar__backdrop {
+        background-color: rgba(0, 0, 0, 0.6);
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        visibility: hidden;
+        transition-property: opacity, visibility;
+        transition-duration: 100ms;
+        transition-timing-function: ease-in-out;
+      }
+      .iconExternalLink_---node_modules-\@docusaurus-theme-classic-lib-next-theme-IconExternalLink-styles-module {
+        margin-left: 0.3rem;
+        position: relative;
+        top: 1px;
       }
     </style>
     <!-- <link href="/styles.css" rel="stylesheet" /> -->
@@ -268,11 +394,13 @@
          /> -->
     <script src="/js/codetabs.js"></script>
   </head>
+
   <body>
     <nav class="navbar navbar--fixed-top">
       <div class="navbar__inner">
         <div class="navbar__items">
           <button
+            onclick="document.querySelector('.navbar.navbar--fixed-top').classList.toggle('navbar-sidebar--show')"
             aria-label="Navigation bar toggle"
             class="navbar__toggle clean-btn"
             type="button"
@@ -341,6 +469,97 @@
         </div>
       </div>
       <div role="presentation" class="navbar-sidebar__backdrop"></div>
+      <div class="navbar-sidebar">
+        <div class="navbar-sidebar__brand">
+          <a class="navbar__brand" href="/">
+            <div class="navbar__logo">
+              <img
+                src="/img/babel.svg"
+                alt="Babel logo"
+                class="themedImage_---node_modules-@docusaurus-theme-classic-lib-next-theme-ThemedImage-styles-module themedImage--dark_---node_modules-@docusaurus-theme-classic-lib-next-theme-ThemedImage-styles-module"
+              />
+            </div>
+          </a>
+
+          <button
+            type="button"
+            class="clean-btn navbar-sidebar__close"
+            onclick="document.querySelector('.navbar.navbar--fixed-top').classList.toggle('navbar-sidebar--show')"
+          >
+            <svg viewBox="0 0 15 15" width="21" height="21">
+              <g stroke="currentColor" stroke-width="1.2">
+                <path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path>
+              </g>
+            </svg>
+          </button>
+        </div>
+        <div class="navbar-sidebar__items">
+          <div class="navbar-sidebar__item menu">
+            <ul class="menu__list">
+              <li class="menu__list-item">
+                <a class="menu__link" href="/docs/">Docs</a>
+              </li>
+              <li class="menu__list-item">
+                <a class="menu__link" target="_top" href="/repl">Try it out</a>
+              </li>
+              <li class="menu__list-item">
+                <a class="menu__link" href="/videos/">Videos</a>
+              </li>
+              <li class="menu__list-item">
+                <a class="menu__link" href="/blog">Blog</a>
+              </li>
+              <li class="menu__list-item">
+                <a
+                  href="https://opencollective.com/babel"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="menu__link"
+                  ><span
+                    >Donate<svg
+                      width="13.5"
+                      height="13.5"
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      class="iconExternalLink_---node_modules-@docusaurus-theme-classic-lib-next-theme-IconExternalLink-styles-module"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"
+                      ></path></svg></span
+                ></a>
+              </li>
+              <li class="menu__list-item">
+                <a class="menu__link" href="/team">Team</a>
+              </li>
+              <li class="menu__list-item">
+                <a
+                  href="https://github.com/babel/babel"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="menu__link"
+                  ><span
+                    >GitHub<svg
+                      width="13.5"
+                      height="13.5"
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      class="iconExternalLink_---node_modules-@docusaurus-theme-classic-lib-next-theme-IconExternalLink-styles-module"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"
+                      ></path></svg></span
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div class="navbar-sidebar__item menu">
+            <button type="button" class="clean-btn navbar-sidebar__back">
+              ← Back to main menu
+            </button>
+          </div>
+        </div>
+      </div>
     </nav>
     <div class="navPusher">
       <div>
